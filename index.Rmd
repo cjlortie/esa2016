@@ -52,11 +52,15 @@ se <- function(x) sd(x)/sqrt(length(x)) ## SE
 
 ### cjlortie quick observations
 ```{r, observations in situ}
+#data ####
 obs <-read.csv("data/cjl.ESA2016.obs.csv")
 str(obs)
 obs
 obs <- obs %>% mutate(p = (count/n))
-v <-qplot(attribute, p, data=obs, ylab="proportion")
+#viz ####
+v <-ggplot(data=obs, aes(x=attribute, y=p)) +
+  geom_bar(stat="identity")
 v +theme(axis.text=element_text(size=12),
         axis.title=element_text(size=14))
+v + coord_flip()
 ```
