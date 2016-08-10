@@ -61,6 +61,5 @@ obs <- obs %>% mutate(p = (count/n))
 v <-ggplot(data=obs, aes(x=attribute, y=p)) +
   geom_bar(stat="identity")
 v +theme(axis.text=element_text(size=12),
-        axis.title=element_text(size=14))
-v + coord_flip()
+        axis.title=element_text(size=14)) + coord_flip()
 ```
