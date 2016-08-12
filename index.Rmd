@@ -57,9 +57,11 @@ obs <-read.csv("data/cjl.ESA2016.obs.csv")
 str(obs)
 obs
 obs <- obs %>% mutate(proportion = (count/n))
+
 #viz ####
-v <-ggplot(data=obs, aes(x=attribute, y=proportion)) +
+v <-ggplot(data=obs, aes(x=attribute, y=proportion, fill = n)) +
   geom_bar(stat="identity")
 v +theme(axis.text=element_text(size=12),
         axis.title=element_text(size=14)) + coord_flip()
+
 ```
