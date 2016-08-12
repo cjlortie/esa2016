@@ -39,6 +39,7 @@ library(indicspecies)
 library(vegan)
 library(boot)
 library(ggplot2)
+library(tibble)
 select <- dplyr::select
 
 ##load functions ####
@@ -54,9 +55,8 @@ se <- function(x) sd(x)/sqrt(length(x)) ## SE
 ```{r, observations in situ}
 #data ####
 obs <-read.csv("data/cjl.ESA2016.obs.csv")
-str(obs)
-obs
 obs <- obs %>% mutate(proportion = (count/n))
+as_data_frame(obs)
 
 #viz ####
 v <-ggplot(data=obs, aes(x=attribute, y=proportion, fill = n)) +

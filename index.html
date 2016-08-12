@@ -235,22 +235,18 @@ div.tocify {
 <h3>cjlortie quick observations</h3>
 <pre class="r"><code>#data ####
 obs &lt;-read.csv(&quot;data/cjl.ESA2016.obs.csv&quot;)
-str(obs)</code></pre>
-<pre><code>## 'data.frame':    6 obs. of  3 variables:
-##  $ attribute: Factor w/ 6 levels &quot;anthropocene link&quot;,..: 5 4 3 6 2 1
-##  $ n        : int  15 37 10 9 9 15
-##  $ count    : int  8 18 4 3 2 6</code></pre>
-<pre class="r"><code>obs</code></pre>
-<pre><code>##           attribute  n count
-## 1        microverse 15     8
-## 2            gender 37    18
-## 3      effect sizes 10     4
-## 4              open  9     3
-## 5              code  9     2
-## 6 anthropocene link 15     6</code></pre>
-<pre class="r"><code>obs &lt;- obs %&gt;% mutate(proportion = (count/n))
-
-#viz ####
+obs &lt;- obs %&gt;% mutate(proportion = (count/n))
+as_data_frame(obs)</code></pre>
+<pre><code>## # A tibble: 6 x 4
+##           attribute     n count proportion
+##              &lt;fctr&gt; &lt;int&gt; &lt;int&gt;      &lt;dbl&gt;
+## 1        microverse    15     8  0.5333333
+## 2            gender    37    18  0.4864865
+## 3      effect sizes    10     4  0.4000000
+## 4              open     9     3  0.3333333
+## 5              code     9     2  0.2222222
+## 6 anthropocene link    15     6  0.4000000</code></pre>
+<pre class="r"><code>#viz ####
 v &lt;-ggplot(data=obs, aes(x=attribute, y=proportion, fill = n)) +
   geom_bar(stat=&quot;identity&quot;)
 v +theme(axis.text=element_text(size=12),
