@@ -11,7 +11,7 @@ output:
   pdf_document:
     toc: yes
 ---
-##ESA2106 observations & ideas
+##ESA2016 observations
 
 ###Hypothesis
 Conferences are an experiment in collaboration, communication, and learning.
