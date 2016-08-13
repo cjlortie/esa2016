@@ -18,7 +18,7 @@ Conferences are an experiment in collaboration, communication, and learning.
 
 ![](./ecology.jpg)
 
-[ecoblender](http://ecoblender.org)
+[cjlortie](http://christopherlortie.info)
 
 ###Methods
 
