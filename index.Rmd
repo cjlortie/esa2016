@@ -31,24 +31,9 @@ Perhaps conferences need to be a natural setting for us though if we want to mak
 knitr::opts_chunk$set(cache=TRUE)
 #library loads ####
 library(dplyr)
-library(lme4)
-library(lattice)
-library(latticeExtra)
-library(lsmeans)
-library(indicspecies)
-library(vegan)
-library(boot)
 library(ggplot2)
 library(tibble)
-select <- dplyr::select
 
-##load functions ####
-error.bar <- function(x, y, upper, lower=upper, length=0,...){
-  if(length(x) != length(y) | length(y) !=length(lower) | length(lower) != length(upper))
-    stop("vectors must be same length")
-  arrows(x,y+upper, x, y-lower, angle=90, code=3, length=0, ...)
-}
-se <- function(x) sd(x)/sqrt(length(x)) ## SE
 ```
 
 ### cjlortie quick observations
